@@ -12,4 +12,10 @@ class Solution:
         print(result)
         
         return result
-            
+        num=0
+        position=0
+        for digit in digits:
+            num+=digit*pow(10,len(digits)-1-position)
+            position+=1
+        num=num+1
+        return [int(i) for i in str(num)]
