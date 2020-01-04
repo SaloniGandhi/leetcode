@@ -1,0 +1,23 @@
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        
+        def makedict(string):
+            k={}
+            for c in string:
+                if c not in k:
+                    k[c]=1
+                else:
+                    k[c]+=1
+            return k
+        sdict=makedict(s)
+        tdict=makedict(t)
+        for letter in sdict:
+            if letter not in tdict:
+                return False
+            elif tdict[letter]!=sdict[letter]:
+                return False
+            elif len(sdict)!=len(tdict):
+                return False
+        return True
+    
+        
