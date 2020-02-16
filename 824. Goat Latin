@@ -1,0 +1,18 @@
+class Solution:
+    def toGoatLatin(self, S: str) -> str:
+        seperator_list=S.split(" ")
+        result=[]
+        i=1
+        for word in seperator_list:
+                if word[0] in 'aeiouAEIOU':
+                    word+='ma'+i*'a'
+                    result.append(word)
+                    
+                else:
+                    nword=word[1:]+word[0]+'ma'+i*'a'
+                    result.append(nword)
+                    nword=""
+                i+=1
+        return ' '.join(result)
+                    
+            
